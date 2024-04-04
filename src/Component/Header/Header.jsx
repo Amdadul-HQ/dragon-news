@@ -3,9 +3,11 @@ import headerLogo from '../../assets/logo.png'
 
 const Header = () => {
     return (
-        <header>
+        <section>
             <img src={headerLogo} alt="" />
-        </header>
+            <p className='font-poppins'>Journalism Without Fear or Favour</p>
+            
+        </section>
     );
 };
 
