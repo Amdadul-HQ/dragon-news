@@ -19,16 +19,30 @@ const Categorys = () => {
                 <button className="block text-xl font-medium text-Dark2 py-4 w-full">All News</button>
             </div>
             <div>
-                <div>
-                    <img src={pic1} alt="" />
-                    <h1>Bayern Slams Authorities Over Flight Delay to Club World Cup</h1>
-                    <div>
-                        <p>Sports</p>
-                        <p><CiCalendar></CiCalendar></p>
+                <div className='mb-4 mt-7'>
+                    <img className='w-full' src={pic1} alt="" />
+                    <h1 className='text-xl font-semibold text-Dark1 my-5'>Bayern Slams Authorities Over Flight Delay to Club World Cup</h1>
+                    <div className='flex gap-x-5'>
+                        <p className='text-base font-medium text-Dark1'>Sports</p>
+                        <p className='flex items-center text-Dark2 gap-x-3'><CiCalendar className='text-2xl'></CiCalendar>Jan 4, 2022</p>
                     </div>
                 </div>
-                <div></div>
-                <div></div>
+                <div className='mb-4 mt-7'>
+                    <img className='w-full' src={pic2} alt="" />
+                    <h1 className='text-xl font-semibold text-Dark1 my-5'>Bayern Slams Authorities Over Flight Delay to Club World Cup</h1>
+                    <div className='flex gap-x-5'>
+                        <p className='text-base font-medium text-Dark1'>Sports</p>
+                        <p className='flex items-center text-Dark2 gap-x-3'><CiCalendar className='text-2xl'></CiCalendar>Jan 4, 2022</p>
+                    </div>
+                </div>
+                <div className='mb-4 mt-7'>
+                    <img className='w-full' src={pic3} alt="" />
+                    <h1 className='text-xl font-semibold text-Dark1 my-5'>Bayern Slams Authorities Over Flight Delay to Club World Cup</h1>
+                    <div className='flex gap-x-5'>
+                        <p className='text-base font-medium text-Dark1'>Sports</p>
+                        <p className='flex items-center text-Dark2 gap-x-3'><CiCalendar className='text-2xl'></CiCalendar>Jan 4, 2022</p>
+                    </div>
+                </div>
             </div>
         </div>
     );
