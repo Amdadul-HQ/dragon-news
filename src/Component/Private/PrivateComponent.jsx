@@ -5,6 +5,7 @@ import { Navigate, useLocation } from "react-router-dom";
 const PrivateComponent = ({children}) => {
 
     const location = useLocation()
+    console.log(location);
 
     const {user , loading } = useContext(AuthContext);
 
@@ -12,6 +13,7 @@ const PrivateComponent = ({children}) => {
     
     if(loading){ return <progress className="progress w-56"></progress>}
 
+    // return user ? children : <Navigate to='/login' ></Navigate>
     return user ? (
         <div>{ children }</div>
     ) : (

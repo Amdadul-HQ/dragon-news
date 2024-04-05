@@ -11,10 +11,10 @@ const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from || '/';
+    const history = location.state?.from || '/';
 
     const navigateNow = () => {
-        setTimeout(() => { navigate(from, { replace: true }) }, 1)
+        setTimeout(() => { navigate(history, { replace: true }) }, 1)
     }
 
     const handleLogIn = e => {

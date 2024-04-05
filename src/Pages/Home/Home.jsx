@@ -5,12 +5,23 @@ import Categorys from "../../Component/Categorys/Categorys";
 import NewsFeed from "../../Component/NewsFeed/NewsFeed";
 import RightBar from "../../Component/RightBar/RightBar";
 import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Home = () => {
 
     const news = useLoaderData()
+    const [showNews,setShowNews] = useState(news)
+
+    const handleShowNews = (id) => {
+       const filterNews = news.filter( n => n.category_id == id )
+       setShowNews(filterNews)
+    }
 
 
+// func
+// onClick
+// perametar
+// 
 
     return (
         <>
@@ -28,13 +39,13 @@ const Home = () => {
             <section className="grid grid-cols-4 gap-x-6 mt-20">
                 <div>
                     {/* Category */}
-                    <Categorys/>
+                    <Categorys handleShowNews={handleShowNews} />
                 </div>
                 <div className="col-span-2">
                     {/* news */}
                     <h1 className="font-semibold text-xl text-Dark1 mb-5">Dragon News Home</h1>
                     {
-                        news.map( aNews => <NewsFeed key={aNews._id} news={aNews} /> )
+                        showNews.map( aNews => <NewsFeed key={aNews._id} news={aNews} /> )
                     }
                 </div>
                 <div>

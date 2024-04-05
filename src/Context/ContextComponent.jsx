@@ -48,6 +48,8 @@ const ContextComponent = ({children}) => {
         return () => unSubcribe()
     },[])
 
+    
+
 
     const info = {user , createUser , logIn ,logOut ,loading ,logInWithGoogle}
     return (

@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import Header from "../../Component/Header/Header";
 import RightBar from "../../Component/RightBar/RightBar";
 import { FaArrowLeftLong } from "react-icons/fa6";
@@ -31,7 +31,7 @@ const NewsFeedDetails = () => {
                             <img className="w-full" src={image_url} alt="" />
                             <h1 className="text-Dark1 my-5 text-2xl font-bold">{title}</h1>
                             <p className="text-Dark2 font-normal text-base">{details}</p>
-                            <button className="bg-Btnbg text-white px-6 py-2 gap-x-2 flex text-xl font-medium items-center mt-8"> <FaArrowLeftLong className="text-2xl" /> All news in this category</button>
+                            <Link to='/'><button className="bg-Btnbg text-white px-6 py-2 gap-x-2 flex text-xl font-medium items-center mt-8"> <FaArrowLeftLong className="text-2xl" /> All news in this category</button></Link>
                         </div>
                     </div>
                     <div className="mt-8">
