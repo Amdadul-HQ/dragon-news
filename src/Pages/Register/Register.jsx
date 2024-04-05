@@ -1,7 +1,25 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../Component/Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/ContextComponent";
 
 const Register = () => {
+
+
+    const { createUser } = useContext(AuthContext)
+
+    const handleRegSubmit = e => {
+        e.preventDefault()
+
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+       createUser(email,password)
+       .then(  )
+    }
+
+
     return (
        <section className="bg-Dark3 font-poppins">
        <Navbar/>
@@ -9,7 +27,7 @@ const Register = () => {
            <div className="bg-white w-[750px] mx-auto py-6 px-10 rounded-md">
                 <h1 className="text-4xl font-semibold text-center">Register your account</h1>
                 <hr className="my-7" />
-                <form>
+                <form onSubmit={handleRegSubmit}>
                   <div>
                        <label className="text-Dark1 text-xl font-semibold" htmlFor="name">Your Name</label>
                        <input className="bg-Dark3 px-5 py-5 block mt-4 w-full" type="text" name="name" id="name" placeholder="Enter your name"  required/>
