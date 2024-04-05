@@ -6,7 +6,7 @@ import { IoEye } from "react-icons/io5";
 
 const NewsFeed = ({news}) => {
 
-    const {author,title,image_url,details,rating,total_view} = news
+    const {_id ,author,title,image_url,details,rating,total_view} = news
 
 
     return (
@@ -27,7 +27,7 @@ const NewsFeed = ({news}) => {
             <div className="p-5">
                 <h1 className="text-Dark1 font-bold text-xl mb-5">{title}</h1>
                 <img className="mb-8" src={image_url} alt="" />
-                <p className="text-Dark2 text-base font-normal">{ details.length > 200 ? details.slice(0,200) : details}.... <Link className="text-[#FF8C47] font-semibold">Read More</Link></p>
+                <p className="text-Dark2 text-base font-normal">{ details.length > 200 ? details.slice(0,200) : details}.... <Link to={`/news/${_id}`} className="text-[#FF8C47] font-semibold">Read More</Link></p>
                 <hr className="mt-5" />
             </div>
             <div className="flex items-center justify-between mt-6 px-5 mb-5">

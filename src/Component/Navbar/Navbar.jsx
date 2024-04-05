@@ -3,7 +3,7 @@ import userIcon from '../../assets/user.png'
 
 const Navbar = () => {
     return (
-        <nav className="font-poppins flex justify-between items-center">
+        <nav className="max-w-screen-xl mx-auto py-5 font-poppins flex justify-between items-center">
             <div>
 
             </div>
@@ -16,7 +16,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-center gap-x-3">
                 <img className="w-10" src={userIcon} alt="" />
-                <Link><button className="bg-Dark1 py-3 px-10 text-[#fff] ">Login</button></Link>
+                <Link to='/login'><button className="bg-Dark1 py-3 px-10 text-[#fff] ">Login</button></Link>
             </div>
         </nav>
     );
