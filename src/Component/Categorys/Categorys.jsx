@@ -21,7 +21,7 @@ const Categorys = ({handleShowNews}) => {
             <h1 className="font-semibold text-xl text-Dark1 mb-5">All Caterogy</h1>
             <div>
                 {
-                    categorys.map( category => <button key={category.id} onClick={()=> handleShowNews(category)} className="block text-xl font-semibold text-Dark1 py-4 bg-Dark3 w-full">{category.name}</button> )
+                    categorys.map( category => <button key={category.id} onClick={()=> handleShowNews(category.id)} className="block text-xl font-semibold text-Dark1 py-4 bg-Dark3 w-full">{category.name}</button> )
                 } 
                 {/* <button onClick={()=> handleShowNews()} className="block text-xl font-semibold text-Dark1 py-4 bg-Dark3 w-full">National News</button>
                 <button onClick={()=> handleShowNews(1)} className="block text-xl font-medium text-Dark2 py-4 w-full">Breaking News</button>
