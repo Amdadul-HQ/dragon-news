@@ -5,6 +5,7 @@ import Home from "../Pages/Home/Home";
 import NewsFeedDetails from "../Pages/NewsFeedDetails/NewsFeedDetails";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivateComponent from "../Component/Private/PrivateComponent";
 
 export const router =  createBrowserRouter([
     {
@@ -19,7 +20,7 @@ export const router =  createBrowserRouter([
             },
             {
                 path:'/news/:id',
-                element:<NewsFeedDetails/>,
+                element:<PrivateComponent><NewsFeedDetails/></PrivateComponent>,
                 loader:() => fetch('/news.json')
             },
             {

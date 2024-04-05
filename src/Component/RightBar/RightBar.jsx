@@ -4,13 +4,29 @@ import { Link } from "react-router-dom";
 import pic1 from '../../assets/qZone1.png'
 import pic2 from '../../assets/qZone2.png'
 import pic3 from '../../assets/qZone3.png'
+import { useContext } from "react";
+import { AuthContext } from "../../Context/ContextComponent";
 
 const RightBar = () => {
+
+    const{logInWithGoogle} = useContext(AuthContext)
+
+    const handleLogInWithGoogle = () => {
+
+        logInWithGoogle()
+        .then( result =>  console.log(result.user))
+        .catch( error => console.log(error.message))
+    }
+    const handleLogInWithGithub = () => {
+        
+    }
+
+
     return (
         <div>
             <h1 className="font-semibold text-xl text-Dark1 mb-5">Login With</h1>
             <div className="w-full space-y-3">
-                <button className="flex items-center text-lg justify-center gap-x-2 font-medium py-2 rounded-lg text- border w-full"><FaGoogle/>Login With Google</button>
+                <button onClick={handleLogInWithGoogle} className="flex items-center text-lg justify-center gap-x-2 font-medium py-2 rounded-lg text- border w-full"><FaGoogle/>Login With Google</button>
                 <button className="flex items-center text-lg justify-center gap-x-2 font-medium py-2 rounded-lg border w-full"><FaGithub/>Login With Github</button>
             </div>
             <h1 className="font-semibold text-xl text-Dark1 mb-5 mt-8">Find Us On</h1>

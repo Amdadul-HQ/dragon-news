@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import Navbar from "../../Component/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/ContextComponent";
@@ -10,6 +10,7 @@ const Register = () => {
     const [successfullMessage , setSuccessfullMessage ] = useState('')
 
     const { createUser } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleRegSubmit = e => {
         e.preventDefault()
@@ -20,7 +21,8 @@ const Register = () => {
 
        createUser(email,password)
        .then( userCredential =>{ 
-           console.log(userCredential.user)
+        navigate('/login')
+        console.log(userCredential.user)
     })
        .catch( error =>  console.log(error.message))
     }
