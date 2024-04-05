@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Navbar from "../../Component/Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/ContextComponent";
 
 const Register = () => {
 
+
+    const [errorMessage , setErrorMessage] = useState('')
+    const [successfullMessage , setSuccessfullMessage ] = useState('')
 
     const { createUser } = useContext(AuthContext)
 
@@ -16,7 +19,10 @@ const Register = () => {
         const password = e.target.password.value;
 
        createUser(email,password)
-       .then(  )
+       .then( userCredential =>{ 
+           console.log(userCredential.user)
+    })
+       .catch( error =>  console.log(error.message))
     }
 
 
