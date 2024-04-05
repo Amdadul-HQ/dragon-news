@@ -4,8 +4,14 @@ import Navbar from "../../Component/Navbar/Navbar";
 import Categorys from "../../Component/Categorys/Categorys";
 import NewsFeed from "../../Component/NewsFeed/NewsFeed";
 import RightBar from "../../Component/RightBar/RightBar";
+import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
+
+    const news = useLoaderData()
+
+
+
     return (
         <>
         <header className="max-w-screen-xl mx-auto">
@@ -19,14 +25,17 @@ const Home = () => {
             <Navbar></Navbar>
         </header>
         <main className="max-w-screen-xl mx-auto font-poppins">
-            <section className="grid grid-cols-4">
+            <section className="grid grid-cols-4 gap-x-6 mt-20">
                 <div>
                     {/* Category */}
                     <Categorys/>
                 </div>
                 <div className="col-span-2">
                     {/* news */}
-                    <NewsFeed/>
+                    <h1 className="font-semibold text-xl text-Dark1 mb-5">Dragon News Home</h1>
+                    {
+                        news.map( aNews => <NewsFeed key={aNews._id} news={aNews} /> )
+                    }
                 </div>
                 <div>
                     {/* right side bar */}
